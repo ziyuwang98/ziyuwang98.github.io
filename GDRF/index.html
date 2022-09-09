@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html>
+
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>GDRF</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="./files/bootstrap.min.css">
+    <link rel="stylesheet" href="./files/font-awesome.min.css">
+    <link rel="stylesheet" href="./files/codemirror.min.css">
+    <link rel="stylesheet" href="./files/app.css">
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h1 class="col-md-20 text-center">
+                <br></br>
+                Generative Deformable Radiance Fields for Disentangled Image Synthesis of Topology-Varying Objects<br>
+                <small>
+                    The 30th Pacific Graphics Conference (PG 2022) (& Computer Graphics Forum, CGF)
+                </small>
+            </h1>
+            <hr style="margin-top:0px">
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a style="font-size: 16px;">
+                            Ziyu Wang
+                        </a>
+                        <sup>1</sup>
+                    </li>
+                    <li>
+                        <a href="https://YuDeng.github.io/" style="font-size: 16px;">
+                            Yu Deng
+                        </a>
+                        <sup>2, 3</sup>
+                    </li>
+                    <li>
+                        <a href="https://jlyang.org/" style="font-size: 16px;">
+                            Jiaolong Yang
+                        </a>
+                        <sup>3</sup>
+                    </li>
+                    <li>
+                        <a href="http://www.yu-jingyi.com/" style="font-size: 16px;">
+                            Jingyi Yu
+                        </a>
+                        <sup>1</sup>
+                    </li>
+                    <li>
+                        <a href="https://www.microsoft.com/en-us/research/people/xtong/" style="font-size: 16px;">
+                            Xin Tong
+                        </a>
+                        <sup>3</sup>
+                    </li><br>
+                    <a></a><br>
+                    <li>
+                        <sup>1</sup>
+                        <a href="https://www.shanghaitech.edu.cn/eng/" style="font-size: 16px;">
+                            ShanghaiTech University
+                        </a>
+                    </li>
+                    <li>
+                        <sup>2</sup>
+                        <a href="https://www.tsinghua.edu.cn/en/" style="font-size: 16px;">
+                            Tsinghua Unviersity
+                        </a>
+                    </li>
+                    <li>
+                        <sup>3</sup>
+                        <a href="https://www.microsoft.com/en-us/research/lab/microsoft-research-asia/"
+                            style="font-size: 16px;">
+                            Microsoft Research Asia
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4 text-center">
+                <ul class="nav nav-pills nav-justified">
+                    <li>
+                        <a href="">
+                            <img src="./files/arxiv.png" height="60px">
+                            <!-- <img src="./files/paper_ours.png" height="60px"> -->
+                            <h4><strong>Paper</strong></h4>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a onClick="alert('Coming soon!')">
+                        <a href="">
+                            <img src="./files/github.png" height="60px">
+                            <h4><strong>Code</strong></h4>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 col-md-offset-0 text-center">
+                <a>
+                    <img src="./files/teaser.png" class="img-responsive" alt="overview"><br>
+                </a>
+                <br></br>
+                <h2>
+                    Abstract
+                </h2>
+                <hr style="margin-top:0px">
+                <p class="text-justify" style="font-size: 16px;">
+                    3D-aware generative models have demonstrated their superb performance to generate 3D neural radiance fields (NeRF) from
+                a collection of monocular 2D images even for topology-varying object categories. However, these methods still lack the capability to separately control the shape and appearance of the objects in the generated radiance fields. In this paper, we propose
+                a generative model for synthesizing radiance fields of topology-varying objects with disentangled shape and appearance variations. Our method generates deformable radiance fields, which builds the dense correspondence between the density fields of
+                the objects and encodes their appearances in a shared template field. Our disentanglement is achieved in an unsupervised manner without introducing extra labels to previous 3D-aware GAN training. We also develop an effective image inversion scheme
+                for reconstructing the radiance field of an object in a real monocular image and manipulating its shape and appearance. Experiments show that our method can successfully learn the generative model from unstructured monocular images and well
+                disentangle the shape and appearance for objects (e.g., chairs) with large topological variance. The model trained on synthetic
+                data can faithfully reconstruct the real object in a given single image and achieve high-quality texture and shape editing results.
+                </p>
+            </div>
+        </div>
+
+        <!-- <div class="row">
+            <div class="col-md-12 col-md-offset-0 text-center">
+                <br></br>
+                <h2>
+                    Video
+                </h2>
+                <hr style="margin-top:0px"> -->
+                <!-- <div class="text-center">
+                    <div style="position:relative;padding-top:56.25%;">
+                        <iframe src="" allowfullscreen=""
+                            style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                    </div>
+                </div> -->
+            <!-- </div>
+        </div> -->
+
+        <div class="row">
+            <div class="col-md-12 col-md-offset-0 text-center">
+                <br></br>
+                <h2>
+                    Overview
+                </h2>
+                <hr style="margin-top:0px">
+                <img src="./files/framework.png" class="img-responsive" alt="overview"><br>
+                <p class="text-justify" style="font-size: 16px;">
+                    Overview of our generative deformable radiance field. It consists of a template radiance field conditioned on a appearance code
+                    , and a deformation field and a correction field conditioned on a shape code. A discriminator is introduced for adversarial learning
+                    between generated images and real ones. All networks are train end-to-end on a collection of color images.
+                </p>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-12 col-md-offset-0 text-center">
+                <br></br>
+                <h2>
+                    Generation Results
+                </h2>
+                <hr style="margin-top:0px">
+                <video style="width:100%;height:100%;" playsinline autoplay loop preload muted>
+                    <source src="./files/demos/generated_results.mp4" type="video/mp4">
+                </video>
+                <hr style="margin-top:0px">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 col-md-offset-0 text-center">
+                <br></br>
+                <h2>
+                    Shape and Appearance Code Swap
+                </h2>
+                <hr style="margin-top:0px">
+                <video style="width:100%;height:100%;" playsinline autoplay loop preload muted>
+                    <source src="./files/demos/generated_code_swap.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-12 col-md-offset-0 text-center">
+                <br></br>
+                <h2>
+                    Comparison
+                </h2>
+                <hr style="margin-top:0px">
+                <p class="text-justify" style="font-size: 16px;">
+                    The images on the diagonal are the reference instances and others
+                    are generated by combining the row-wise shape code and column-wise appearance code. Our method achieves much better shape and
+                    appearance disentanglement than EditNeRF and CodeNeRF (e.g., see the color of car roof in the column-wise texture swapping results)
+                </p>
+                <video style="width:100%;height:100%;" playsinline autoplay loop preload muted>
+                    <source src="./files/demos/codeSwap_comparison.mp4" type="video/mp4"> 
+                </video>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 col-md-offset-0 text-center">
+                <br></br>
+                <h2>
+                    Latent Space Interpolation
+                </h2>
+                <hr style="margin-top:0px">
+                <p class="text-justify" style="font-size: 16px;">
+                    Our disentanglement design makes it possible to interpolate either shape and appearance while keeping the other unchanged. 
+                </p>
+                <!-- <img src="./files/latent_interp.png" class="img-responsive" alt="overview"><br> -->
+                <video style="width:100%;height:100%;" playsinline autoplay loop preload muted>
+                    <source src="./files/demos/latent_interpolation.mp4" type="video/mp4">
+                </video>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 col-md-offset-0 text-center">
+                <br></br>
+                <h2>
+                    Real Image Embedding and Editing
+                </h2>
+                <hr style="margin-top:0px">
+                <!-- <p class="text-justify" style="font-size: 16px;">
+                    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                </p> -->
+                <video style="width:100%;height:100%;" playsinline autoplay loop preload muted>
+                    <source src="./files/demos/real_inversion_editing.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+        <!-- 
+        <div class="row">
+            <div class="col-md-12 col-md-offset-0">
+                <div class="text-center">
+                    <h2>
+                        Citation
+                    </h2> -->
+                <!-- </div>
+                <hr style="margin-top:0px">
+                <div class="form-group col-md-12 col-md-offset-0">
+                    <div class="CodeMirror cm-s-default CodeMirror-wrap" style="font-size: 16px;">
+                        <div
+                            style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4px; left: 4px; ">
+                            <textarea autocorrect="off" autocapitalize="off" spellcheck="false"
+                                style="position: absolute; padding: 0px; width: 1000px; height: 1em; outline: none;"
+                                tabindex="0"></textarea></div>
+                        <div class="CodeMirror-vscrollbar" cm-not-content="true">
+                            <div style="min-width: 1px; height: 0px;"></div>
+                        </div>
+                        <div class="CodeMirror-hscrollbar" cm-not-content="true">
+                            <div style="height: 100%; min-height: 1px; width: 0px;"></div>
+                        </div>
+                        <div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div>
+                        <div class="CodeMirror-gutter-filler" cm-not-content="true"></div>
+                        <div class="CodeMirror-scroll" tabindex="-1">
+                            <div class="CodeMirror-sizer"
+                                style="margin-left: 0px; margin-bottom: -17px; border-right-width: 13px; min-height: 162px; padding-right: 0px; padding-bottom: 0px;">
+                                <div style="position: relative; top: 0px;">
+                                    <div class="CodeMirror-lines">
+                                        <div style="position: relative; outline: none;">
+                                            <div class="CodeMirror-measure">AخA</div>
+                                            <div class="CodeMirror-measure"></div>
+                                            <div style="position: relative; z-index: 1;"></div>
+                                            <div class="CodeMirror-cursors">
+                                                <div class="CodeMirror-cursor"
+                                                    style="left: 4px; top: 0px; height: 17.1406px;">&nbsp;</div>
+                                            </div>
+                                            <div class="CodeMirror-code" style="">
+                                                <pre
+                                                    class=" CodeMirror-line "><span style="padding-right: 0.1px;">@inproceedings{deng2022gram,</span></pre>
+                                                <pre
+                                                    class=" CodeMirror-line "><span style="padding-right: 0.1px;"> &nbsp;  title={GRAM: Generative Radiance Manifolds for 3D-Aware Image Generation},</span></pre>
+                                                <pre
+                                                    class=" CodeMirror-line "><span style="padding-right: 0.1px;"> &nbsp;  author={Deng, Yu and Yang, Jiaolong and Xiang, Jianfeng and Tong, Xin},</span></pre>
+                                                <pre
+                                                    class=" CodeMirror-line "><span style="padding-right: 0.1px;"> &nbsp;  booktitle={IEEE/CVF Conference on Computer Vision and Pattern Recognition},</span></pre>
+                                                <pre
+                                                    class=" CodeMirror-line "><span style="padding-right: 0.1px;"> &nbsp;  year={2022}</span></pre>
+                                                <pre
+                                                    class=" CodeMirror-line "><span style="padding-right: 0.1px;">}</span></pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="position: absolute; height: 13px; width: 1px; top: 280px;"></div>
+                            <div class="CodeMirror-gutters" style="display: none; height: 300px;"></div>
+                        </div>
+                    </div> -->
+                <!-- </div>
+            </div>
+        </div> -->
+
+        <div class="row">
+            <div class="col-md-12 col-md-offset-0 text-center">
+                <br></br>
+                <h2>
+                    Acknowledgements
+                </h2>
+                <hr style="margin-top:0px">
+                <p class="text-justify" style="font-size: 16px;">
+                    The website template was adapted from <a href="https://yudeng.github.io/GRAM/">GRAM</a> and <a href="https://jonbarron.info/mipnerf/">Mip-NeRF</a>.
+                </p>
+            </div>
+        </div>
+
+
+</body>
+
+</html>
